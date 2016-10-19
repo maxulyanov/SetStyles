@@ -37,24 +37,6 @@ class Storage {
 
     /**
      *
-     * @param host
-     * @param callback
-     */
-    static getItemsForHost(host, callback) {
-        StorageDriver.get('sites', (data) => {
-            if (host in data) {
-                callback(data[host]);
-            }
-            else {
-                callback({});
-            }
-
-        });
-    }
-
-
-    /**
-     *
      * @param callback
      */
     static getAllItems(callback) {
@@ -145,15 +127,36 @@ class Storage {
 
     /**
      *
+     * @param host
      * @param id
      * @param callback
      */
     static getById(host, id, callback) {
         StorageDriver.get('sites', (data) => {
-            if(!(host in data) || !(id in data[host])) {
+            if(host in data && id in data[host]) {
+                callback(data[host][id]);
+            }
+            else {
                 callback(null);
             }
-            callback(data[host][id]);
+
+        })
+    }
+
+
+    /**
+     *
+     * @param host
+     * @param callback
+     */
+    static getByHost(host, callback) {
+        StorageDriver.get('sites', (data) => {
+            if(host in data) {
+                callback(data[host]);
+            }
+            else {
+                callback(null);
+            }
         })
     }
 

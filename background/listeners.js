@@ -15,13 +15,17 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
         return;
     }
 
+    let host = request.host;
     switch (type) {
         case 'getStyles':
-            StorageDriver.get('styles', (styles) => {
-                response(styles);
+            Storage.getByHost(host, (data) => {
+                console.log(host);
+                response(data);
             });
             return true;
             break;
+        default:
+            console.warn(`type ${type} not supported!`);
     }
 
 });

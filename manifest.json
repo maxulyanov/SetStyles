@@ -1,7 +1,7 @@
 {
   "name": "SetStyles",
   "description": "Set styles site",
-  "version": "0.1",
+  "version": "0.1.0",
   "author": "Max Ulyanov",
 
   "permissions": [
