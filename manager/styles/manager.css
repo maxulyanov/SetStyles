@@ -1,0 +1,92 @@
+html {
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 16px;
+  color: #828A99;
+  background: #C0EAFF;
+}
+body * {
+  box-sizing: border-box;
+}
+::selection {
+  background: #e5ecf6;
+}
+.b-style-item:hover .style-item__name {
+  color: #687080;
+}
+.b-style-item:hover .style-item__host {
+  color: #8791a5;
+}
+.b-style-item .style-item__name {
+  margin-bottom: 7px;
+  font-size: 24px;
+  word-break: break-all;
+  color: #828A99;
+  transition: .3s;
+}
+.b-style-item .style-item__url {
+  color: #A4ACBB;
+  word-break: break-all;
+  transition: .3s;
+}
+.container-item-controls {
+  margin-top: 15px;
+  font-size: 0;
+}
+.b-action {
+  display: inline-block;
+  padding: 8px 30px;
+  margin-right: 10px;
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #FFF;
+  text-decoration: none;
+  cursor: pointer;
+  border: 0;
+  outline: none;
+  border-radius: 20px;
+  transition: .3s;
+}
+.b-action:hover {
+  transition: .3s;
+}
+.b-action:last-child {
+  margin-right: 0;
+}
+.b-action.is-update {
+  background: #6AD969;
+}
+.b-action.is-update:hover {
+  background: #4ed24d;
+  box-shadow: 1px 1px 25px #4ed24d;
+}
+.b-action.is-freeze {
+  background: #65CAE2;
+}
+.b-action.is-freeze:hover,
+.b-action.is-freeze.is-active {
+  background: #47c0dc;
+  box-shadow: 1px 1px 25px #47c0dc;
+}
+.b-action.is-delete {
+  background: #F56151;
+}
+.b-action.is-delete:hover {
+  background: #f3422f;
+  box-shadow: 1px 1px 25px #f3422f;
+}
+.container-editor {
+  height: 400px;
+  border: 1px solid #f1f1f1;
+  margin-bottom: 20px;
+  position: relative;
+}
+.editor {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}

@@ -1,0 +1,20 @@
+.popup-default {
+  padding: 30px;
+  width: 600px;
+  text-align: left;
+}
+.popup-default .remodal-close {
+  top: 10px;
+  right: 10px;
+  color: #F56151;
+}
+.popup-default .remodal-close:hover {
+  color: #f3422f;
+}
+.popup-default .remodal-close:before {
+  font-size: 28px;
+}
+.b-popup-title {
+  margin: 5px 0 20px 0;
+  color: #828A99;
+}

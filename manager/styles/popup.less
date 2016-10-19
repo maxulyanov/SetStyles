@@ -1,0 +1,24 @@
+@import (reference) url("./variables.less");
+
+
+.popup-default {
+  padding: 30px;
+  width: 600px;
+  text-align: left;
+  .remodal-close {
+    top: 10px;
+    right: 10px;
+    color: @red;
+    &:hover {
+      color: darken(@red, 7%);
+    }
+    &:before {
+      font-size: 28px;
+    }
+  }
+}
+
+.b-popup-title {
+  margin: 5px 0 20px 0;
+  color: @gray;
+}

@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>SetStyles Manager</title>
+
+  <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700&subset=cyrillic" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles/libs/ace.css">
+  <link rel="stylesheet" href="styles/libs/rewrite-ace.css">
+  <link rel="stylesheet" href="styles/libs/remodal.css">
+  <link rel="stylesheet" href="styles/libs/remodal-default-theme.css">
+  <link rel="stylesheet" href="styles/utils.css">
+  <link rel="stylesheet" href="styles/popup.css">
+  <link rel="stylesheet" href="styles/manager.css">
+
+  <script src="./js/libs/jquery.min.js"></script>
+  <script src="../libs/cssjson.js"></script>
+  <script src="../libs/Utils.js"></script>
+  <script src="../storage/StorageDriver.js"></script>
+  <script src="../storage/Storage.js"></script>
+
+  <script src="./js/libs/ace/ace.js"></script>
+  <script src="./js/libs/ace/mode-css.js"></script>
+  <script src="./js/libs/ace/theme.js"></script>
+  <script src="./js/libs/remodal.js"></script>
+
+  <script src="./js/components/Editor.js"></script>
+  <script src="./js/components/List.js"></script>
+  <script src="./js/components/Create.js"></script>
+  <script src="./js/components/Update.js"></script>
+
+  <script defer src="./js/init.js"></script>
+</head>
+<body>
+
+<div class="remodal-bg">
+  <div class="container-manager">
+
+    <div class="b-title">SetStyles Manager</div>
+
+    <div class="container-style-items js-list-root">
+
+    </div>
+
+    <!--<div class="util-section is-small">-->
+    <!--Вы еще не добавили ни одного стиля-->
+    <!--</div>-->
+
+    <div class="util-align-center">
+      <a class="b-action is-update" href="#create">Create new styles</a>
+    </div>
+
+  </div>
+
+
+  <div class="remodal popup-default js-popup-create" data-remodal-id="create">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div>
+      <div class="b-title b-popup-title">Create new styles</div>
+    </div>
+    <form action="" class="js-form-create">
+      <div class="container-form-item">
+        <label class="label-default" for="name">Name:</label>
+        <input id="name" name="name" class="input-default js-field-form" type="text" required placeholder="Dark theme for groups vk.com">
+      </div>
+      <div class="container-form-item">
+        <label class="label-default" for="url">Url:</label>
+        <input id="url" name="url" class="input-default js-field-form" type="text" required placeholder="https://vk.com/groups">
+      </div>
+      <div class="container-editor container-theme-ace">
+        <div class="editor" id="editor-create"></div>
+      </div>
+      <div class="util-align-center">
+        <button class="b-action is-update" type="submit">Create</button>
+        <a style="display: none;" data-remodal-action="close" class="js-remodal-close" href="#">hidden element</a>
+      </div>
+    </form>
+  </div>
+
+
+
+  <div class="remodal popup-default js-popup-update" data-remodal-id="update">
+    <button data-remodal-action="close" class="remodal-close"></button>
+    <div>
+      <div class="b-title b-popup-title">Update Styles</div>
+    </div>
+    <form action="" class="js-form-update">
+      <div class="container-form-item">
+        <label class="label-default" for="name-update">Name:</label>
+        <input id="name-update" name="name" class="input-default js-field-form" type="text" placeholder="Dark theme for groups vk.com">
+      </div>
+      <div class="container-form-item">
+        <label class="label-default" for="url-update">Url:</label>
+        <input id="url-update" name="url" class="input-default js-field-form" type="text" placeholder="https://vk.com/groups">
+      </div>
+      <div class="container-editor container-theme-ace">
+        <div class="editor" id="editor-update"></div>
+      </div>
+      <button class="b-action is-update" type="submit">Update</button>
+        <a style="display: none;" data-remodal-action="close" class="js-remodal-close" href="#">hidden element</a>
+    </form>
+  </div>
+
+
+</div>
+
+
+
+</body>
+</html>

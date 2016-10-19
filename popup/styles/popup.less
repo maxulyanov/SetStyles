@@ -1,0 +1,104 @@
+
+// Colors Popup
+@gray: #828A99;
+@gray3: #f1f1f1;
+@red: #F56151;
+@green: #6AD969;
+@blue: #65CAE2;
+
+
+// GLOBAL
+html {
+  height: 100%;
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+  font-size: 15px;
+  color: @gray;
+  background: #FFF;
+  * {
+    box-sizing: border-box;
+  }
+}
+
+
+.container-popup {
+  width: 350px;
+  background: #FFF;
+}
+
+.b-state {
+  margin-bottom: 2px;
+  padding: 15px 10px 15px 40px;
+  position: relative;
+  .state__label {
+    color: #222;
+  }
+  .state__text {
+    color: #222;
+  }
+  .state__domain {
+    text-decoration: underline;
+  }
+}
+
+
+.b-go-manager {
+  display: block;
+  padding: 10px;
+  text-align: center;
+  text-decoration: none;
+  color: #FFF;
+  background: @gray;
+  transition: .3s;
+  &:hover {
+    background: darken(@gray, 5%);
+    transition: .3s;
+  }
+}
+
+
+.indicator {
+  display: inline-block;
+  margin-top: -10px;
+  width: 20px;
+  height: 20px;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  border-radius: 100%;
+  &.is-used {
+    background: @green;
+  }
+  &.is-not-used {
+    background: @red;
+  }
+  &.is-freeze {
+    background: @blue;
+  }
+  &.is-animated {
+    -webkit-animation: sk-scaleout 1.0s infinite ease-in-out;
+    animation: sk-scaleout 1.0s infinite ease-in-out;
+  }
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% { -webkit-transform: scale(0) }
+  100% {
+    -webkit-transform: scale(1.0);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  } 100% {
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+      opacity: 0;
+    }
+}
