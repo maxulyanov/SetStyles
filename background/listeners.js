@@ -19,7 +19,6 @@ chrome.runtime.onMessage.addListener((request, sender, response) => {
     switch (type) {
         case 'getStyles':
             Storage.getByHost(host, (data) => {
-                console.log(host);
                 response(data);
             });
             return true;
