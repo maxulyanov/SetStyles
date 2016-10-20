@@ -10,28 +10,30 @@
 'use strict';
 
 
-
 chrome.runtime.sendMessage({type: 'getStyles', host: window.location.hostname}, (data) => {
 
-    if(document.getElementById('inject-styles') != null) {
+
+    if (document.getElementById('inject-styles') != null) {
         return;
     }
 
-    if(data != null) {
-        for(let key in data) {
-            if(data.hasOwnProperty(key)) {
+    if (data != null) {
+        let href = window.location.href;
+        for (let key in data) {
+            if (data.hasOwnProperty(key)) {
                 let item = data[key];
 
-                if(item.freeze == true) {
+                if (item.freeze == true) {
                     continue;
                 }
 
-                // todo regexp
-                if(false) {
+                //
+                if (href.indexOf(item.url) == -1) {
                     continue;
                 }
 
-                if(item.styles) {
+                if (item.styles) {
+                    console.log('inject!');
                     Styles.inject(item.styles);
                     break;
                 }
@@ -39,3 +41,4 @@ chrome.runtime.sendMessage({type: 'getStyles', host: window.location.hostname}, 
         }
     }
 });
+
